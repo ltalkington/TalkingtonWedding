@@ -13,7 +13,25 @@
   }
 }
 
-.App-header {
+#titlestuff {
+  color: red;
+}
+
+.anchor-new {
+  color: white;
+}
+
+.accordion-button {
+  font-size: 100px;
+}
+
+#form-info {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.App-header,
+#App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -23,9 +41,59 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.App-header2 {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+#App-header3 {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.home-page-text {
+  color: WHITE;
+}
 
+#button-form-inline {
+  margin-top: 45px;
+  border-radius: 15px;
+  height: auto;
+}
+#frosted-div {
+  background-color: black;
+  margin-top: 15px;
+  border-radius: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.headline-text {
+  color: white;
+  font-family: Pacifico;
+  text-shadow: 0 0 3px blue, 0 0 5px #0000ff;
+  font-size: 50px;
+}
+#background-filler {
+  background-image: url("./Components/Img/forestpark.JPEG");
+  background-size: cover;
+  height: 700px;
+  background-repeat: no-repeat;
+  text-align: center;
+}
 .App-link {
   color: #61dafb;
+}
+#acc-text {
+  color: black;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +103,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#banner {
+  background-color: grey;
+  background-image: url("./Components/Img/florida1.JPG");
+  background-size: cover;
+  height: 700px;
+  background-repeat: no-repeat;
+  text-align: center;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+.color-nav {
+  background-color: #b08968;
 }
