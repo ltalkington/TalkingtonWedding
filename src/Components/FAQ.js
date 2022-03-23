@@ -20,7 +20,7 @@ function FAQ() {
       <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
           <Accordion.Header id="acc-header">
-            Where is the Wedding? {employees}
+            Where is the Wedding?
           </Accordion.Header>
           <Accordion.Body id="acc-text">
             The Wedding and Reception will be at River City Hotel and Casino in

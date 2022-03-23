@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { Row, Col, Button, Form, ProgressBar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function RVSPYes({
+function RVSPNo({
   firstName,
   setFirstName,
   lastName,
@@ -18,16 +18,19 @@ function RVSPYes({
   setRSVP,
   inputFields,
   setInputFields,
+  dietRequests,
+  setDietRequests,
+  songRequests,
+  setSongRequests,
   groupID,
   setGroupID,
   guests,
   setGuests,
 }) {
   const nextStep = () => {
-    setProgress(75);
-    setStep(4);
+    setProgress(90);
+    setStep(5);
   };
-
   const handleFormChange = (index, event) => {
     let data = [...inputFields];
     data[index][event.target.name] = event.target.value;
@@ -42,15 +45,55 @@ function RVSPYes({
     data.splice(index, 1);
     setInputFields(data);
   };
+  const showGuests = () => {
+    for (let i = 0; i < inputFields.length; i++) {
+      return (
+        <h1>
+          {" "}
+          {inputFields[i].firstName} {inputFields[i].lastName}{" "}
+        </h1>
+      );
+    }
+  };
+
+  const submitButton = async (e) => {
+    e.preventDefault();
+    let numberGoing = inputFields.length;
+    let data = {
+      groupID: groupID,
+      isGoing: 1,
+      numberGoing: numberGoing + 1,
+      dietRequests: dietRequests,
+      songRequests: songRequests,
+    };
+
+    // On submit of the form, send a GET request with the date to the server
+    const response = await fetch("http://localhost:8080/createreservation", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (response.status === 200 || response.status === 201) {
+      alert("Successfully added the Employee!");
+    } else {
+      alert(`Failed to add employee, status code = ${response.status}`);
+    }
+  };
+
   return (
     <div id="frosted-glass" className="special-fix">
+      <h1 id="form-info"> Group # {groupID}</h1>
       <h1 id="form-info"> Your Progress</h1>
-      <ProgressBar now={progress} variant="success" /> <br />
+      <ProgressBar now={progress} variant="success" /> <br /> <hr></hr>
       <h1 id="form-info">
         {" "}
-        {firstName}, we are glad that you can attend. We have some additional
-        questions.
-      </h1>
+        {firstName}, we are sorry that you cannot attend, do you have anyone
+        else that won't be attending with you?
+      </h1>{" "}
+      <hr></hr>
+      <br />
       <Form>
         <Form.Label id="form-info">
           {" "}
@@ -94,14 +137,9 @@ function RVSPYes({
             </div>
           );
         })}
-
-        <Button id="buttonsForm" onClick={addFields}>
-          {" "}
-          Add More....
-        </Button>
+        <Button id="buttonsForm" onClick={addFields}> Add More....</Button>
         <br />
         <br />
-
         <Button id="buttonsForm" onClick={nextStep}>
           Continue
         </Button>
@@ -110,4 +148,4 @@ function RVSPYes({
   );
 }
 
-export default RVSPYes;
+export default RVSPNo;

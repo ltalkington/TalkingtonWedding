@@ -13,10 +13,18 @@
   }
 }
 
-#titlestuff {
-  color: red;
+#frosted-glass {
+  background-color: #b08968;
+  border-radius: 25px;
+  border: 1px solid black;
+  width: 50%;
+  padding: 10px;
+  box-shadow: 5px;
 }
 
+.special-fix {
+  margin-top: 50px;
+}
 .anchor-new {
   color: white;
 }
@@ -65,9 +73,11 @@
 }
 
 #button-form-inline {
-  margin-top: 45px;
+  margin-top: 30px;
   border-radius: 15px;
   height: auto;
+  background-color: #7f5539;
+  border: black;
 }
 #frosted-div {
   background-color: black;
@@ -118,4 +128,10 @@
 
 .color-nav {
   background-color: #b08968;
+}
+
+#buttonsForm {
+  background-color: #7f5539;
+  border: black;
+  border-radius: 15px;
 }

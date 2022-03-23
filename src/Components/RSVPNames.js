@@ -14,15 +14,39 @@ function RVSPNames({
   setProgress,
   step,
   setStep,
+  groupID,
+  setGroupID,
+  guests,
+  setGuests,
 }) {
   const nextStep = () => {
     setProgress(25);
     setStep(2);
   };
+  const submitButton = async (e) => {
+    e.preventDefault();
+
+    let data = {
+      firstName: firstName,
+      lastName: lastName,
+    };
+
+    // On submit of the form, send a GET request with the date to the server
+    const response = await fetch(
+      `http://localhost:8080/displayguests/filter/${firstName}/${lastName}`,
+      { headers: { "Content-Type": "application/json" } }
+    );
+    const guest = await response.json();
+    setGuests(guest[0]);
+    console.log(guest);
+    setGroupID(guest[0].groupID);
+    console.log("guest group ID", guest[0].groupID);
+  };
   return (
-    <div>
+    <div id="frosted-glass" className="special-fix">
       <h1 id="form-info"> Your Progress</h1>
       <ProgressBar now={progress} variant="success" /> <br />
+      <hr />
       <Form>
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridfName">
@@ -45,7 +69,13 @@ function RVSPNames({
             />
           </Form.Group>
         </Row>
-        <Button variant="primary" onClick={nextStep}>
+        <Button
+          id="buttonsForm"
+          onClick={(e) => {
+            nextStep();
+            submitButton(e);
+          }}
+        >
           Continue
         </Button>
       </Form>

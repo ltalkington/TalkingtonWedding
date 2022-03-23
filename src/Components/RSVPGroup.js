@@ -16,15 +16,27 @@ function RVSPGroup({
   setStep,
   RSVP,
   setRSVP,
+  groupID,
+  setGroupID,
+  guests,
+  setGuests,
 }) {
   const nextStep = () => {
     setProgress(50);
-    setStep(3);
+    if (RSVP == 0) {
+      console.log(RSVP);
+      setStep(7);
+    } else {
+      console.log(RSVP);
+      setStep(3);
+    }
   };
   return (
-    <div>
+    <div id="frosted-glass" className="special-fix">
+      <h1 id="form-info"> Group # {groupID}</h1>
       <h1 id="form-info"> Your Progress</h1>
       <ProgressBar now={progress} variant="success" /> <br />
+      <hr />
       <h1 id="form-info"> Hello {firstName}</h1>
       <Form>
         <Row className="mb-3">
@@ -32,17 +44,18 @@ function RVSPGroup({
             <Form.Label id="form-info">
               Are you going to be joining us on our special day?
             </Form.Label>
+            <hr />
             <Form.Select
               value={RSVP}
               onChange={(e) => setRSVP(e.target.value)}
               type="RSVP"
             >
-              <option> Yes, I will be in attendance</option>
-              <option> No, I will be with you in spirit</option>
+              <option value={1}> Yes, I will be in attendance</option>
+              <option value={0}> No, I will be with you in spirit</option>
             </Form.Select>
           </Form.Group>
         </Row>
-        <Button variant="primary" onClick={nextStep}>
+        <Button id="buttonsForm" onClick={nextStep}>
           Continue
         </Button>
       </Form>

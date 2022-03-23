@@ -22,6 +22,10 @@ function RVSPReservation({
   setDietRequests,
   songRequests,
   setSongRequests,
+  groupID,
+  setGroupID,
+  guests,
+  setGuests,
 }) {
   const nextStep = () => {
     setProgress(90);
@@ -29,14 +33,16 @@ function RVSPReservation({
   };
 
   return (
-    <div>
+    <div id="frosted-glass" className="special-fix">
       <h1> Your Progress</h1>
       <ProgressBar now={progress} variant="success" /> <br />
+      <hr />
       <h1>
         {" "}
         {firstName}, we are glad that you can attend. These are the final
         questions we have.
       </h1>
+      <hr />
       <Form>
         <Row className="mb-3">
           <Form.Group as={Col}>
@@ -65,7 +71,7 @@ function RVSPReservation({
           </Form.Group>
         </Row>
 
-        <Button variant="primary" onClick={nextStep}>
+        <Button id="buttonsForm" onClick={nextStep}>
           Continue
         </Button>
       </Form>

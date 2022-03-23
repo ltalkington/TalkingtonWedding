@@ -12,7 +12,46 @@ app.use(cors());
 var db = require("./db_conn");
 
 app.get("/listguests", function (req, res) {
-  db.pool.query("SELECT * FROM Guests", function (error, result, fields) {
+  query = "SELECT * FROM Guests";
+  db.pool.query(query, (err, result) => {
+    if (err) {
+      res.write(JSON.stringify(err));
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+app.get("/displayguests/:filter/:first/:last", function (req, res) {
+  query =
+    "SELECT * FROM Guests WHERE firstName = '" +
+    req.params.first +
+    "' AND lastName = '" +
+    req.params.last +
+    "'";
+  db.pool.query(query, (err, result) => {
+    if (err) {
+      res.write(JSON.stringify(err));
+    } else {
+      res.send(result);
+      console.log(result);
+    }
+  });
+});
+
+app.post("/createreservation", function (req, res) {
+  var mysql = req.app.get("mysql");
+  var sql =
+    "INSERT INTO Reservations (groupID, isGoing, numberGoing, dietRequests, songRequests) VALUES (?,?,?,?,?)";
+  var inserts = [
+    req.body.groupID,
+    req.body.isGoing,
+    req.body.numberGoing,
+    req.body.dietRequests,
+    req.body.songRequests,
+  ];
+  console.log(inserts);
+  db.pool.query(sql, inserts, function (error, result, fields) {
     if (error) {
       res.write(JSON.stringify(error));
     } else {

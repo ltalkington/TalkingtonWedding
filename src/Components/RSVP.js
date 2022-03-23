@@ -6,15 +6,19 @@ import RSVPGroup from "./RSVPGroup";
 import RSVPYes from "./RSVPYes";
 import RVSPReservation from "./RSVPReservation";
 import RSVPConfirmation from "./RSVPConfirmation";
+import RSVPNo from "./RSVPNo";
 import { Row, Col, Button, Form, ProgressBar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function RVSP() {
   const [step, setStep] = useState(1);
+  const [groupID, setGroupID] = useState();
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
   const [progress, setProgress] = useState(0);
   const [RSVP, setRSVP] = useState();
+  const [guests, setGuests] = useState();
+
   const [inputFields, setInputFields] = useState([
     { firstName: "", lastName: "" },
   ]);
@@ -34,6 +38,10 @@ function RVSP() {
             setProgress={setProgress}
             step={step}
             setStep={setStep}
+            groupID={groupID}
+            setGroupID={setGroupID}
+            guests={guests}
+            setGuests={setGuests}
           ></RVSPNames>
         </div>
       );
@@ -51,6 +59,10 @@ function RVSP() {
             setStep={setStep}
             RSVP={RSVP}
             setRSVP={setRSVP}
+            groupID={groupID}
+            setGroupID={setGroupID}
+            guests={guests}
+            setGuests={setGuests}
           ></RSVPGroup>
         </div>
       );
@@ -70,6 +82,10 @@ function RVSP() {
             setRSVP={setRSVP}
             inputFields={inputFields}
             setInputFields={setInputFields}
+            groupID={groupID}
+            setGroupID={setGroupID}
+            guests={guests}
+            setGuests={setGuests}
           ></RSVPYes>
         </div>
       );
@@ -93,6 +109,10 @@ function RVSP() {
             setDietRequests={setDietRequests}
             songRequests={songRequests}
             setSongRequests={setSongRequests}
+            groupID={groupID}
+            setGroupID={setGroupID}
+            guests={guests}
+            setGuests={setGuests}
           ></RVSPReservation>
         </div>
       );
@@ -116,7 +136,39 @@ function RVSP() {
             setDietRequests={setDietRequests}
             songRequests={songRequests}
             setSongRequests={setSongRequests}
+            groupID={groupID}
+            setGroupID={setGroupID}
+            guests={guests}
+            setGuests={setGuests}
           ></RSVPConfirmation>
+        </div>
+      );
+
+    case 7:
+      return (
+        <div className="App-header" id="App-header">
+          <RSVPNo
+            firstName={firstName}
+            setFirstName={setFirstName}
+            lastName={lastName}
+            setLastName={setLastName}
+            progress={progress}
+            setProgress={setProgress}
+            step={step}
+            setStep={setStep}
+            RSVP={RSVP}
+            setRSVP={setRSVP}
+            inputFields={inputFields}
+            setInputFields={setInputFields}
+            dietRequests={dietRequests}
+            setDietRequests={setDietRequests}
+            songRequests={songRequests}
+            setSongRequests={setSongRequests}
+            groupID={groupID}
+            setGroupID={setGroupID}
+            guests={guests}
+            setGuests={setGuests}
+          ></RSVPNo>
         </div>
       );
     //   if (step == 1) {
