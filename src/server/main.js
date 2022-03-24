@@ -60,6 +60,48 @@ app.post("/createreservation", function (req, res) {
   });
 });
 
+app.post("/createguest", function (req, res) {
+  var mysql = req.app.get("mysql");
+  var sql =
+    "INSERT INTO Guests (firstName, lastName, groupID, isGoing, isPlusOne) VALUES (?,?,?,?,?)";
+  var inserts = [
+    req.body.firstName,
+    req.body.lastName,
+    req.body.groupID,
+    req.body.isGoing,
+    req.body.isPlusOne,
+  ];
+  console.log(inserts);
+  db.pool.query(sql, inserts, function (error, result, fields) {
+    if (error) {
+      res.write(JSON.stringify(error));
+    } else {
+      res.send(result);
+    }
+  });
+});
+//updates customers
+app.put("/updateguests", function (req, res) {
+  let inserts = [
+    req.body.firstName,
+    req.body.lastName,
+    req.body.groupID,
+    req.body.isGoing,
+    req.body.isPlusOne,
+    req.body.guestID,
+  ];
+  query =
+    "UPDATE Guests SET firstName=?, lastName=?, groupID=?, isGoing=?, isPlusOne=? WHERE guestID=?;";
+  db.pool.query(query, inserts, (err, result) => {
+    if (err) {
+      res.write(JSON.stringify(err));
+      console.log(inserts);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
 app.listen(app.get("port"), function () {
   console.log(
     "Express started on http://localhost:" +

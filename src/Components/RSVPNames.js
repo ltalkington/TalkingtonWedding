@@ -37,10 +37,16 @@ function RVSPNames({
       { headers: { "Content-Type": "application/json" } }
     );
     const guest = await response.json();
-    setGuests(guest[0]);
-    console.log(guest);
-    setGroupID(guest[0].groupID);
-    console.log("guest group ID", guest[0].groupID);
+    if (guest[0]) {
+      setGuests(guest[0]);
+      console.log(guest[0].guestID, "this is guest info");
+      setGroupID(guest[0].groupID);
+      console.log("guest group ID", guest[0].groupID);
+
+      nextStep();
+    } else {
+      alert("unauthorized user");
+    }
   };
   return (
     <div id="frosted-glass" className="special-fix">
@@ -72,7 +78,6 @@ function RVSPNames({
         <Button
           id="buttonsForm"
           onClick={(e) => {
-            nextStep();
             submitButton(e);
           }}
         >

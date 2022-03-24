@@ -22,9 +22,14 @@ function RVSPYes({
   setGroupID,
   guests,
   setGuests,
+  hasGuests,
+  setHasGuests,
 }) {
   const nextStep = () => {
     setProgress(75);
+    if (inputFields[0].firstName != "") {
+      setHasGuests(true);
+    }
     setStep(4);
   };
 

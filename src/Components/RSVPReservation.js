@@ -34,10 +34,10 @@ function RVSPReservation({
 
   return (
     <div id="frosted-glass" className="special-fix">
-      <h1> Your Progress</h1>
+      <h1 id="form-info"> Your Progress</h1>
       <ProgressBar now={progress} variant="success" /> <br />
       <hr />
-      <h1>
+      <h1 id="form-info">
         {" "}
         {firstName}, we are glad that you can attend. These are the final
         questions we have.
@@ -46,13 +46,14 @@ function RVSPReservation({
       <Form>
         <Row className="mb-3">
           <Form.Group as={Col}>
-            <Form.Label>
+            <Form.Label id="form-info">
               Do you or your guests have allergies/diet restrictions that we
               should know of(i.e Peanuts)?
             </Form.Label>
             <Form.Control
               value={dietRequests}
               onChange={(e) => setDietRequests(e.target.value)}
+              id="form-info"
               type="dietRequests"
               placeholder="Ex. Peanut Allergy...."
             />

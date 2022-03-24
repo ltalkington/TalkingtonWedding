@@ -16,8 +16,9 @@ function RVSP() {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
   const [progress, setProgress] = useState(0);
-  const [RSVP, setRSVP] = useState();
+  const [RSVP, setRSVP] = useState(0);
   const [guests, setGuests] = useState();
+  const [hasGuests, setHasGuests] = useState();
 
   const [inputFields, setInputFields] = useState([
     { firstName: "", lastName: "" },
@@ -86,6 +87,8 @@ function RVSP() {
             setGroupID={setGroupID}
             guests={guests}
             setGuests={setGuests}
+            hasGuests={hasGuests}
+            setHasGuests={setHasGuests}
           ></RSVPYes>
         </div>
       );
@@ -113,6 +116,8 @@ function RVSP() {
             setGroupID={setGroupID}
             guests={guests}
             setGuests={setGuests}
+            hasGuests={hasGuests}
+            setHasGuests={setHasGuests}
           ></RVSPReservation>
         </div>
       );
@@ -140,6 +145,8 @@ function RVSP() {
             setGroupID={setGroupID}
             guests={guests}
             setGuests={setGuests}
+            hasGuests={hasGuests}
+            setHasGuests={setHasGuests}
           ></RSVPConfirmation>
         </div>
       );
@@ -168,6 +175,8 @@ function RVSP() {
             setGroupID={setGroupID}
             guests={guests}
             setGuests={setGuests}
+            hasGuests={hasGuests}
+            setHasGuests={setHasGuests}
           ></RSVPNo>
         </div>
       );
