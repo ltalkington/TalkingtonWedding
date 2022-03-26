@@ -9,9 +9,10 @@ import RSVPConfirmation from "./RSVPConfirmation";
 import RSVPNo from "./RSVPNo";
 import { Row, Col, Button, Form, ProgressBar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import PasswordProtectPage from "./PasswordProtectPage";
 
 function RVSP() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
   const [groupID, setGroupID] = useState();
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
@@ -25,8 +26,29 @@ function RVSP() {
   ]);
   const [dietRequests, setDietRequests] = useState();
   const [songRequests, setSongRequests] = useState();
+  const [password, setPassword] = useState("talkington");
 
   switch (step) {
+    case 0:
+      return (
+        <div className="App-header" id="App-header">
+          <PasswordProtectPage
+            firstName={firstName}
+            setFirstName={setFirstName}
+            lastName={lastName}
+            setLastName={setLastName}
+            progress={progress}
+            setProgress={setProgress}
+            step={step}
+            setStep={setStep}
+            groupID={groupID}
+            setGroupID={setGroupID}
+            guests={guests}
+            setGuests={setGuests}
+            password={password}
+          ></PasswordProtectPage>
+        </div>
+      );
     case 1:
       return (
         <div className="App-header" id="App-header">

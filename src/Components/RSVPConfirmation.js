@@ -159,7 +159,6 @@ function RVSPConfirmation({
       return (
         <div>
           {console.log("we make it")}
-          <hr />
           <h1 id="form-info"> Your guest(s) are </h1>
           {guestIterator()}
           <hr />

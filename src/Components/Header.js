@@ -4,7 +4,10 @@ function Header() {
   return (
     <Navbar variant="dark" className="color-nav">
       <Container>
-        <Navbar.Brand>The Talkington Wedding</Navbar.Brand>
+        <Navbar.Brand id="header-id">
+          {" "}
+          <em>The Talkington Wedding</em>
+        </Navbar.Brand>
         <Nav className="justify-content-end ">
           <Nav.Link className="App-link" href="/">
             Home

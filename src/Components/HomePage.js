@@ -34,12 +34,10 @@ function HomePage() {
       <section id="one" class="wrapper style1 special">
         <div class="inner">
           <header class="major">
-            <h2>
-              Logan and Mackenzie are excited to share their wedding with you
-            </h2>
+            <h2>We are excited to share our wedding with you</h2>
             <p className="home-page-text">
-              Please see below for more information regarding the event
-              regarding times, event space, and more.
+              Please see below for more information regarding the event times,
+              event space, and more.
             </p>
           </header>
           <ul class="icons major">
@@ -106,7 +104,7 @@ function HomePage() {
               Lodging Information
               <br />
             </h2>
-            <p>
+            <p className="home-page-text">
               Lodging will be available at River City Casino, please contact the
               front-desk and let them know that you are attending Logan and
               MacKenzie's wedding. Alternatively, you can reach out to Logan and
@@ -122,8 +120,8 @@ function HomePage() {
             <h2>Other Information</h2>
             <p>
               Below you can find some other information that can assist with
-              <br />
-              your arrival to our wedding and ensuring you have a quality time.
+              your arrival to our wedding and ensuring you have an enjoyable
+              time.
             </p>
           </header>
           <ul className="features">
@@ -176,19 +174,16 @@ function HomePage() {
             </li>
             <li class="icon fa-heart">
               <h3>Dress Code</h3>
-              <p>
-                Our Dress code is fairly relaxed, feel free to wear whatever you
-                would normally wear to a nice dinner at a minimum (jeans, shirt)
-              </p>
+              <p>Our dress code is smart casual to semi-formal.</p>
             </li>
             <li class="icon fa-heart">
               <h3>Explore Saint Louis</h3>
               <p>
                 If you aren't familiar with Saint Louis, we recommend that you
-                go see/do atleast one of the following! Go to Ted Drewes, visit
+                go see/do at least one of the following! Go to Ted Drewes, visit
                 the Arch, go the Anhueser Busch Brewery, Nine Mile Garden, or
-                take a walk on Grant's Trail. All of these are Within steps of
-                River City Casino.
+                take a walk on Grant's Trail. All of these are within minutes of
+                driving from River City Casino.
               </p>
             </li>
             <li class="icon fa-heart">
@@ -198,7 +193,7 @@ function HomePage() {
                 be relatively cool with fans blowing and shade that covers the
                 entire area, we did want to make that fact known. Our reception
                 at night will be held inside in a ball room. So make sure you
-                are prepared for a little heat as August in Missouri can be be a
+                are prepared for a little heat as August in Missouri can be a
                 little toasty.
               </p>
             </li>
@@ -209,7 +204,7 @@ function HomePage() {
       <section id="cta" className="wrapper style4 ">
         <div class="inner">
           <header>
-            <h2>Would you like to RSVP?</h2>
+            <h2>Would you like to RSVP? (Coming Soon)</h2>
           </header>
           <ul class="actions stacked">
             <li>

@@ -4,15 +4,6 @@ import { useState, useEffect } from "react";
 
 function FAQ() {
   const [employees, setEmployees] = useState();
-  const loadGuests = async () => {
-    const response = await fetch("http://localhost:8080/listguests");
-    const employees = await response.json();
-    setEmployees(employees);
-    console.log(employees);
-  };
-  useEffect(() => {
-    loadGuests();
-  }, []);
 
   return (
     <header className="App-header2">
