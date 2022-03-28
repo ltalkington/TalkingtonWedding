@@ -6,7 +6,7 @@ import { Row, Col, Button, Form, ProgressBar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function PasswordProtectPage({ password, setStep, step }) {
-  const [passwordCheck, setPasswordCheck] = useState(0);
+  const [passwordCheck, setPasswordCheck] = useState();
   const submitButton = () => {
     if (passwordCheck === password) {
       setStep(1);

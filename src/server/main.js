@@ -34,7 +34,6 @@ app.get("/displayguests/:filter/:first/:last", function (req, res) {
       res.write(JSON.stringify(err));
     } else {
       res.send(result);
-      console.log(result);
     }
   });
 });
@@ -95,7 +94,6 @@ app.put("/updateguests", function (req, res) {
   db.pool.query(query, inserts, (err, result) => {
     if (err) {
       res.write(JSON.stringify(err));
-      console.log(inserts);
     } else {
       res.send(result);
     }

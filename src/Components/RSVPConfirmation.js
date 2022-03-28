@@ -31,7 +31,7 @@ function RVSPConfirmation({
 }) {
   const nextStep = () => {
     setProgress(90);
-    setStep(5);
+    setStep(8);
   };
   const showGuests = () => {
     for (let i = 0; i < inputFields.length; i++) {

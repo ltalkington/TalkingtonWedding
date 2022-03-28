@@ -10,6 +10,7 @@ import RSVPNo from "./RSVPNo";
 import { Row, Col, Button, Form, ProgressBar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PasswordProtectPage from "./PasswordProtectPage";
+import FinalConfirm from "./FinalConfirm";
 
 function RVSP() {
   const [step, setStep] = useState(0);
@@ -200,6 +201,13 @@ function RVSP() {
             hasGuests={hasGuests}
             setHasGuests={setHasGuests}
           ></RSVPNo>
+        </div>
+      );
+
+    case 8:
+      return (
+        <div className="App-header" id="App-header">
+          <FinalConfirm RSVP={RSVP}></FinalConfirm>
         </div>
       );
     //   if (step == 1) {
