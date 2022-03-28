@@ -7,10 +7,10 @@ import image1 from "./assets/css/images/pic01.jpg";
 import image2 from "./assets/css/images/pic02.jpg";
 import image3 from "./assets/css/images/pic03.jpg";
 
-import florida2 from ".//Img/florida2.JPG";
-import riverCity from ".//Img/grand-court.jpeg";
-import forestPark from ".//Img/forestpark.JPEG";
-import florida4 from ".//Img/florida4.JPG";
+import florida2 from "./Img/florida2.JPG";
+import riverCity from "./Img/grand-court.jpeg";
+import forestPark from "./Img/forestpark.JPEG";
+import florida4 from "./Img/florida4.JPG";
 
 function HomePage() {
   return (
