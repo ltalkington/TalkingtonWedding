@@ -4,12 +4,28 @@ var bodyParser = require("body-parser");
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("port", 9004);
+const path = require("path");
+
 app.set("mysql", mysql);
 var cors = require("cors");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 var db = require("./db_conn");
+
+// app.use(express.static(path.join(__dirname + "/build/static/index.html")));
+/*
+    ROUTES
+*/
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname + "/talkingtonwedding/build/index.html"));
+});
+app.get("/RSVP", function (req, res) {
+  res.sendFile(path.join(__dirname + "/talkingtonwedding/build/index.html"));
+});
+app.get("/FAQ", function (req, res) {
+  res.sendFile(path.join(__dirname + "/talkingtonwedding/build/index.html"));
+});
 
 app.get("/listguests", function (req, res) {
   query = "SELECT * FROM Guests";

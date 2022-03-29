@@ -68,7 +68,7 @@ function RVSPNo({
     };
 
     // On submit of the form, send a GET request with the date to the server
-    const response = await fetch("http://localhost:9004/createreservation", {
+    const response = await fetch("http://www.talkingtonwedding.com/createreservation", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {

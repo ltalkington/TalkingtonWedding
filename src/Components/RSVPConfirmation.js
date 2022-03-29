@@ -195,13 +195,16 @@ function RVSPConfirmation({
       guestID: guests.guestID,
     };
 
-    const response = await fetch("http://localhost:9004/updateguests", {
-      method: "PUT",
-      body: JSON.stringify(userData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      "http://www.talkingtonwedding.com/updateguests",
+      {
+        method: "PUT",
+        body: JSON.stringify(userData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     if (response.status === 200 || response.status === 201) {
       alert("Successfully updated the Guest!");
       console.log(userData, "this is first update");
@@ -209,13 +212,16 @@ function RVSPConfirmation({
       alert(`Failed to update Guest, status code = ${response.status}`);
     }
 
-    const response2 = await fetch("http://localhost:9004/createreservation", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response2 = await fetch(
+      "http://www.talkingtonwedding.com/createreservation",
+      {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     if (response2.status === 200 || response2.status === 201) {
       alert("Successfully added the Reservation!");
     } else {
@@ -234,18 +240,21 @@ function RVSPConfirmation({
 
         // On submit of the form, send a GET request with the date to the server
         const response3 = await fetch(
-          `http://localhost:9004/displayguests/filter/${guestData.firstName}/${guestData.lastName}`,
+          `http://www.talkingtonwedding.com/displayguests/filter/${guestData.firstName}/${guestData.lastName}`,
           { headers: { "Content-Type": "application/json" } }
         );
         const guest = await response3.json();
         if (guest[0]) {
-          const response = await fetch("http://localhost:9004/updateguests", {
-            method: "PUT",
-            body: JSON.stringify(guestData),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          });
+          const response = await fetch(
+            "http://www.talkingtonwedding.com/updateguests",
+            {
+              method: "PUT",
+              body: JSON.stringify(guestData),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
           if (response.status === 200 || response.status === 201) {
             alert("Successfully updated the Guest!");
             console.log(userData);
@@ -253,13 +262,16 @@ function RVSPConfirmation({
             alert(`Failed to update Guest, status code = ${response.status}`);
           }
         } else {
-          const response4 = await fetch("http://localhost:9004/createguest", {
-            method: "POST",
-            body: JSON.stringify(guestData),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          });
+          const response4 = await fetch(
+            "http://www.talkingtonwedding.com/createguest",
+            {
+              method: "POST",
+              body: JSON.stringify(guestData),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
           if (response4.status === 200 || response4.status === 201) {
             alert("Successfully added the Reservation!");
             console.log(guestData);
