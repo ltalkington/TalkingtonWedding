@@ -33,7 +33,7 @@ function RVSPNames({
 
     // On submit of the form, send a GET request with the date to the server
     const response = await fetch(
-      `http://talkingtonwedding.com:9004/displayguests/filter/${firstName}/${lastName}`,
+      `http://localhost:9004/displayguests/filter/${firstName}/${lastName}`,
       { headers: { "Content-Type": "application/json" } }
     );
     const guest = await response.json();
