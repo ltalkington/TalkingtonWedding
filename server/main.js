@@ -3,7 +3,7 @@ var mysql = require("./db_conn.js");
 var bodyParser = require("body-parser");
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
-app.set("port", 8080);
+app.set("port", 9004);
 app.set("mysql", mysql);
 var cors = require("cors");
 app.use(express.json());
