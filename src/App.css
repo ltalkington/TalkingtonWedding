@@ -121,7 +121,7 @@
   }
 }
 
-#banner {
+/* #banner {
   background-color: grey;
   background-image: url("./Components/Img/florida1.JPG");
   background-size: cover;
@@ -134,7 +134,7 @@
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-}
+} */
 
 #password {
   background-color: black;
@@ -144,9 +144,39 @@
   background-color: white;
 }
 
-@media screen and (max-width: 700px) and (min-width: 400px) {
+@media screen and (max-width: 600px) {
   #banner {
     background-image: url("./Components/Img/florida1copy.jpg");
+    background-repeat: cover;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    height: 50vh;
+    width: 50vw;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  #banner {
+    background-image: url("./Components/Img/florida1.JPG");
+    background-repeat: cover;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    width: 100vw;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+  }
+}
+
+@media screen and (max-width: 700px) and (min-width: 400px) {
+  #banner {
+    background-image: url("./Components/Img/florida1.JPG");
     background-repeat: cover;
     background-attachment: fixed;
     background-size: cover;
