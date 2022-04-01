@@ -148,7 +148,7 @@
   #banner {
     background-image: url("./Components/Img/florida1copy.jpg");
     background-repeat: cover;
-    background-attachment: relative;
+    background-attachment: fixed;
     background-size: cover;
     background-position: center center;
     height: 100vh;
