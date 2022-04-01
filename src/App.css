@@ -144,7 +144,7 @@
   background-color: white;
 }
 
-@media only screen and (max-width: 400px) {
+@media screen and (max-width: 700px) and (min-width: 400px) {
   #banner {
     background-image: url("./Components/Img/florida1copy.jpg");
     background-repeat: cover;
