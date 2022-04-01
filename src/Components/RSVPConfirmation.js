@@ -195,16 +195,13 @@ function RVSPConfirmation({
       guestID: guests.guestID,
     };
 
-    const response = await fetch(
-      "http://www.talkingtonwedding.com/updateguests",
-      {
-        method: "PUT",
-        body: JSON.stringify(userData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch("http://143.244.187.27:9004/updateguests", {
+      method: "PUT",
+      body: JSON.stringify(userData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     if (response.status === 200 || response.status === 201) {
       alert("Successfully updated the Guest!");
       console.log(userData, "this is first update");
@@ -213,7 +210,7 @@ function RVSPConfirmation({
     }
 
     const response2 = await fetch(
-      "http://www.talkingtonwedding.com/createreservation",
+      "http://143.244.187.27:9004/createreservation",
       {
         method: "POST",
         body: JSON.stringify(data),
@@ -240,13 +237,13 @@ function RVSPConfirmation({
 
         // On submit of the form, send a GET request with the date to the server
         const response3 = await fetch(
-          `http://www.talkingtonwedding.com/displayguests/filter/${guestData.firstName}/${guestData.lastName}`,
+          `http://143.244.187.27:9004/displayguests/filter/${guestData.firstName}/${guestData.lastName}`,
           { headers: { "Content-Type": "application/json" } }
         );
         const guest = await response3.json();
         if (guest[0]) {
           const response = await fetch(
-            "http://www.talkingtonwedding.com/updateguests",
+            "http://143.244.187.27:9004/updateguests",
             {
               method: "PUT",
               body: JSON.stringify(guestData),

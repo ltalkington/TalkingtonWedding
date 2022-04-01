@@ -68,13 +68,16 @@ function RVSPNo({
     };
 
     // On submit of the form, send a GET request with the date to the server
-    const response = await fetch("http://143.244.187.27:9004/createreservation/", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      "http://143.244.187.27:9004/createreservation/",
+      {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     if (response.status === 200 || response.status === 201) {
       alert("Successfully added the Employee!");
     } else {
@@ -137,7 +140,10 @@ function RVSPNo({
             </div>
           );
         })}
-        <Button id="buttonsForm" onClick={addFields}> Add More....</Button>
+        <Button id="buttonsForm" onClick={addFields}>
+          {" "}
+          Add More....
+        </Button>
         <br />
         <br />
         <Button id="buttonsForm" onClick={nextStep}>
