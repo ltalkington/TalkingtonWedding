@@ -263,7 +263,7 @@ function RVSPConfirmation({
           }
         } else {
           const response4 = await fetch(
-            "http://143.244.187.27:9004/createguest",
+            "http://143.244.187.27:9004/createguest/",
             {
               method: "POST",
               body: JSON.stringify(guestData),
