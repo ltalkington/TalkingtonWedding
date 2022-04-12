@@ -20,24 +20,16 @@ function PasswordProtectPage({ password, setStep, step }) {
       <Form>
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridfName">
-            <Form.Label id="form-info">Password</Form.Label>
-            <Form.Control
-              id="form-info-control"
-              value={passwordCheck}
-              onChange={(e) => setPasswordCheck(e.target.value)}
-              type="password"
-              placeholder=" enter password....."
-            />
+            <Form.Label id="form-info">
+              Please fill out our RSVP on our Wedding RSVP or fill out the
+              Google Doc below
+            </Form.Label>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQQ5-R9VITU4aFN1AMf0y8hbXGm3iUNdYr3M-fnxclEcrOqg/viewform?usp=sf_link">
+              {" "}
+              Google Docs RSVP
+            </a>
           </Form.Group>
         </Row>
-        <Button
-          id="buttonsForm"
-          onClick={(e) => {
-            submitButton(e);
-          }}
-        >
-          Continue
-        </Button>
       </Form>
     </div>
   );
