@@ -136,72 +136,46 @@
   -o-background-size: cover;
 } */
 
+@media all and (min-width: 580px) {
+  #banner {
+    background-color: grey;
+    background-image: url("./Components/Img/florida1.JPG");
+    background-size: cover;
+    height: 85vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-attachment: fixed;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+  }
+}
+
+@media all and (max-width: 580px) {
+  #banner {
+    background-color: grey;
+    background-image: url("./Components/Img/florida1copy.jpg");
+    background-size: cover;
+    height: 85vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-attachment: fixed;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+  }
+}
+
 #password {
   background-color: black;
 }
 
 #form-info-control {
   background-color: white;
-}
-
-@media screen and (max-width: 485px) {
-  #banner {
-    background-image: url("./Components/Img/florida3.JPG");
-    background-repeat: cover;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center center;
-    height: 20vh;
-    width: 20vw;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-  }
-}
-
-@media screen and (max-width: 600px) and (min-width: 486px) {
-  #banner {
-    background-image: url("./Components/Img/florida1copy.jpg");
-    background-repeat: cover;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center center;
-    height: 50vh;
-    width: 50vw;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-  }
-}
-
-@media screen and (min-width: 700px) {
-  #banner {
-    background-image: url("./Components/Img/florida1.JPG");
-    background-repeat: cover;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center center;
-    height: 100vh;
-    width: 100vw;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-  }
-}
-
-@media screen and (max-width: 700px) and (min-width: 400px) {
-  #banner {
-    background-image: url("./Components/Img/florida1.JPG");
-    background-repeat: cover;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center center;
-    height: 100vh;
-    width: 100vw;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-  }
 }
 
 .color-nav {
