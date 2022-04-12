@@ -136,21 +136,19 @@
   -o-background-size: cover;
 } */
 
-@media all and (min-width: 580px) {
-  #banner {
-    background-color: grey;
-    background-image: url("./Components/Img/florida1.JPG");
-    background-size: cover;
-    height: 85vh;
-    width: 100vw;
-    background-repeat: no-repeat;
-    text-align: center;
-    background-attachment: fixed;
-    background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-  }
+#banner {
+  background-color: grey;
+  background-image: url("./Components/Img/florida1.JPG");
+  background-size: cover;
+  height: 85vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  text-align: center;
+  background-attachment: fixed;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
