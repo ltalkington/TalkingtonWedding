@@ -153,10 +153,10 @@
   }
 }
 
-@media all and (max-width: 580px) {
+@media (min-width: 320px) and (max-width: 480px) {
   #banner {
     background-color: grey;
-    background-image: url("./Components/Img/florida1copy.jpg");
+    background-image: url("./Components/Img/florida2.JPG");
     background-size: cover;
     height: 85vh;
     width: 100vw;
