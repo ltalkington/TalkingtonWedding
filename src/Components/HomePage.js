@@ -151,15 +151,7 @@ function HomePage() {
                 >
                   Macy's
                 </a>{" "}
-                |{" "}
-                <a
-                  href="https://www.target.com/gift-registry/gift-giver?registryId=a17883e0-ffb7-11eb-8ad9-3d212c61fb2f&type=WEDDING&clkid=25bf0827N724c11ecb1d479a81054fdee&lnm=81938&afid=The%20Knot%2C%20Inc%20and%20Subsidiaries&ref=tgt_adv_xasd0002"
-                  target="_blank"
-                  className="anchor-new"
-                >
-                  {" "}
-                  Target
-                </a>{" "}
+               
               </p>
             </li>
             <li class="icon fa-heart">
